@@ -1,29 +1,28 @@
 ## 아윤채 운영
 
 
-#### 프로젝트 개요    
+#### 프로젝트 개요
 | 프로젝트명 | 아윤채 운영 |
 | ------ | ------ |
 | 기획 | Unit K > 디지털마케팅본부 > 기획3그룹 > 기획2팀 > 이승후 과장,  기획3팀 > 김경자 대리 |
-| 퍼블 | 황규정 과장, 이명민 주임 |
-| 개발 | 이슬기 대리 |
-| 개발 URL | http://10.155.8.24:8329/kr/index.jsp |
-| 서비스 URL | http://www.amosprofessional.com |
-| SSL | https://www.amosprofessional.com |
-| 어드민 URL | http://www.ayunche.com/_admin/index.jsp (계정:sglee / rhksflwk.1) |
+| 퍼블 | 퍼블리셔팀 > 황규정 과장, 이명민 주임 |
+| 개발 | 개발팀 > 이슬기 대리 |
+| 개발 URL | http://10.155.8.24:8309/index.jsp |
+| 서비스 URL | http://www.ayunche.com |
+| SSL |  |
+| 어드민 URL | http://www.ayunche.com/_admin/index.jsp  |
 | 상태 | 유지보수중 |
-| 비고 | 개발, 관리자는 vpn 접속 후 접근 가능 (신규계정 관리자 접근 시 /as/index.jsp 상단에 VPN IP 추가) |
+| 비고 | 개발 URL ; vpn 접속 후 접근 가능  |
 
 
 #### 웹서버 정보
 |  |  |
 | ------ | ------ |
-| 서버 정보 | (개발) 10.155.8.24  
-|  | (운영) 10.155.8.25, 10.155.8.26 |
+| 서버 정보 | (개발) 10.155.8.24  (운영) 10.155.8.25, 10.155.8.26 |
 | FTP | VDI 내 https://sac.amorepacific.com (각 사용자 계정/암호) |
 | ROOT PATH | /app/was8.0/WEB-A/yp_ayunche_kr_2012/yp_ayunche_kr_2012.ear/yp_ayunche_kr_2012.war/ |
 | 웹서버 | JSP 2.1 |
-| Git | https://gitlab.dbroscreative.com/project.2017/amos-professional.git |
+| Git | https://gitlab.dbroscreative.com/project.2017/ayunche.git |
 | 비고 | include 된 파일 수정 후 SAC > SSH 에서 touch |
 1. VPN -> VDI(공통계정) -> SAC -> SFTP 접속(IAM에서 설정한 암호)
 
