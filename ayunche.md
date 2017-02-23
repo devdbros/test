@@ -19,7 +19,7 @@
 |  |  |
 | ------ | ------ |
 | 서버 정보 | (개발) 10.155.8.24  
-(운영) 10.155.8.25, 10.155.8.26 |
+|  | (운영) 10.155.8.25, 10.155.8.26 |
 | FTP | VDI 내 https://sac.amorepacific.com (각 사용자 계정/암호) |
 | ROOT PATH | /app/was8.0/WEB-A/yp_ayunche_kr_2012/yp_ayunche_kr_2012.ear/yp_ayunche_kr_2012.war/ |
 | 웹서버 | JSP 2.1 |
