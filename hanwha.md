@@ -24,12 +24,14 @@
 | 웹서버 | Windows Server 2008 R2 Standard 6.1 (build 7601: SP1) / IIS 7.5 7600. 16385 |
 | Git | https://gitlab.dbroscreative.com/project.2017/hanwha-ecard.git |
 | 비고 | DextImageMTool 3.0, LG U+ SMS/LMS/MMS  
-## - DextImageM  
+
+##### DextImageM  
 - 발급일:2017-02-17, 수정일:2017-02-23(서버명변경), 만료일:없음(무상유지보수 1년, 추후 유상유지보수 계약)
 - 컴포넌트 업체 : 라온위즈 email: support@raonwiz.com, Tel: 02-584-3908
 - 설치파일 : https://gitlab.dbroscreative.com/project.2017/hanwha-ecard/tree/master/files/DEXTUpload_Pro_V4.0.0.0_Installer.exe
 - 라이선스 정보 변경시 : C:\Program Files (x86)\RAONWIZ\DEXTImageM\DEXTImageM_Config.xml 수정  
-##- LG U+ SMS/LMS/MMS  
+
+##### LG U+ SMS/LMS/MMS  
 - (http://sms.uplus.co.kr/) PM130472 / dkdlelel1!
 - 모듈&매뉴얼 : https://gitlab.dbroscreative.com/project.2017/hanwha-ecard/tree/master/files/LGUPlus_Agent_2.2.6_release.zip
 - 결과코드 : https://github.com/devdbros/test/blob/master/SMS_MMS_result_code.pdf
