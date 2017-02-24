@@ -23,9 +23,9 @@
 | ROOT PATH | /onsure-surprise.co.kr/ |
 | 웹서버 | WINDOWS / IIS |
 | Git | https://gitlab.dbroscreative.com/project.2017/hanwha-ecard.git |
-| 비고 | DextImageMTool 3.0 (발급일:2017-02-17, 만료일 넣어주세요. )|
+| 비고 | DextImageMTool 3.0 (발급일:2017-02-23, 만료일 넣어주세요. )|
 - DextImageM 컴포넌트 업체 : 라온위즈 <email: support@raonwiz.com, Tel: 02-584-3908>
-- 정보 변경시 : C:\Program Files (x86)\RAONWIZ\DEXTImageM\DEXTImageM_Config.xml 수정
+- 서버 정보 변경시 : C:\Program Files (x86)\RAONWIZ\DEXTImageM\DEXTImageM_Config.xml 수정
 
 #### DB 정보
 |  |  |
