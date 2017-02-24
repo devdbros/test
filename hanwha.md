@@ -13,9 +13,9 @@
 | SSL | https://onsure-surprise.co.kr/ |
 | 어드민 URL | https://onsure-surprise.co.kr/healthyletter/_admin/login.asp (devsglee/rhksflwk1!)|
 | 상태 | 캠페인 종료 |
-| 비고 | 캠페인 종료 후 페이지 리다이렉팅,  
-  (PC)https://www.onsure.co.kr/p/homepage/main.do,  
-  (Mobile)https://www.onsure.co.kr/m/homepage/main.do |
+| 비고 | 캠페인 종료 후 페이지 리다이렉팅,  |
+|  |  (PC)https://www.onsure.co.kr/p/homepage/main.do,  
+| ----- |  (Mobile)https://www.onsure.co.kr/m/homepage/main.do |
 
 
 #### 웹서버 정보
