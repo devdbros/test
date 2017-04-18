@@ -148,7 +148,7 @@ ex) substr("substr test text", "test", "sample")
 - 표기 : $variable, $number1, $productCode, $user\_name  
 - 할당 : $number1 = 253; $productCode = "TA03920"  
 - 변수명 규칙  
-  \- 영문 대/소문자(A~Z, a~z), 숫자(0~9), 밑줄문자(\_)  
+  \- 영문 대/소문자(A-Z, a-z), 숫자(0~9), 밑줄문자(\_)  
   \- 인코딩이 UTF-8인 경우 기본 라틴 문자가 아닌 문자(α, β, ┘ 등)도 허용  
   \- <u>대부분 영문 대/소문자, 숫자, 밑줄문자로만 이루어진 변수명을 사용, 대/소문자 구별</u>
 
