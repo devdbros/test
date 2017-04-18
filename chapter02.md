@@ -1,6 +1,6 @@
 # CHAPTER 2. 데이터: 텍스트와 숫자 다루기
----  
-변수 ; 이름이 지정된 컨테이너로서 값을 담는다. 프로그램 실행 과정에서 변경 가능  
+
+변수 : 이름이 지정된 컨테이너로서 값을 담는다. 프로그램 실행 과정에서 변경 가능  
 변수 생성, 값 변경, 출력 등
 
 ## 2.1 텍스트
@@ -17,7 +17,7 @@
 
 - **작은따옴표('text')**  
   작은따옴표(')와 역슬래시(\\) 이외 문자는 그대로 취급
-```
+```js
 print '오늘 저녁 뭐먹을까요?';
 print '치킨';
 print '032153';
@@ -30,7 +30,7 @@ print '"순살"이 좋겠네요';
 
 
 - **이스케이프 문자(\\)**  
-```
+```js
 print 'It\'s a piece of cake.'
 ```
 실행 결과
@@ -55,7 +55,7 @@ It's a piece of cake.
 
 - **heredoc**  
 큰따옴표 문자열과 같은 이스케이프 문자 사용법과 변수 치환 규칙
-```
+```js
 <<<HEREDOC
 <html>
     <head>
@@ -105,8 +105,8 @@ ex) strcasecmp("text", "TExt")
 |---|---|---|
 |패딩 문자|printf("우편번호 .%05d.", "521")|00521|
 |기호|printf("2016년 최저기온 %+d℃ 최고기온 %+d℃ ", -18.0, 36.6)|2016년 최저기온 -18℃ 최고기온 +36℃|
-|최소 너비|printf("Alphabet ; %8s", "ABCD")|Alphabet ;     ABCD|
-||printf("Numbers ; %05d", "123")|Numbers ; 00123|
+|최소 너비|printf("Alphabet : %8s", "ABCD")|Alphabet :     ABCD|
+||printf("Numbers : %05d", "123")|Numbers : 00123|
 |마침표와 정밀도|printf("PI = %.2f", 3.141592)|PI = 3.14|
 
 - **strtolower()**  
@@ -139,12 +139,12 @@ ex) substr("substr test text", "test", "sample")
 - 운영체제에 따라 프로그램에서 다룰 수 있는 수의 최대값, 최소값, 소수점 이하 최대 자릿수가 상이함
 
 ### 2.2.2 산술 연산자
-- \+ ; 덧셈
-- \- ; 뺄셈
-- / ; 나눗셈
-- \* ; 곱셈
-- ** ; 거듭제곱 ( PHP 5.6 이전 버전에서는 pow() 함수 사용 )
-- % ; 나머지 ( 7 % 3 &rarr; 1 )
+- \+ : 덧셈
+- \- : 뺄셈
+- / : 나눗셈
+- \* : 곱셈
+- ** : 거듭제곱 ( PHP 5.6 이전 버전에서는 pow() 함수 사용 )
+- % : 나머지 ( 7 % 3 &rarr; 1 )
 - 연산 우선순위는 일반적인 수학 계산 순서를 따름 (곱셉, 나눗셈이 덧셈 뺄셈보다 높음)  
 - 모호한 순서는 괄호를 이용해 확실히 한다.
 
@@ -152,8 +152,8 @@ ex) substr("substr test text", "test", "sample")
 
 #### 변수  
 - 프로그램 실행 과정에서 사용되는 데이터를 담는다  
-- 표기 ; $variable, $number1, $productCode, $user\_name  
-- 할당 ; $number1 = 253; $productCode = "TA03920"  
+- 표기 : $variable, $number1, $productCode, $user\_name  
+- 할당 : $number1 = 253; $productCode = "TA03920"  
 - 변수명 규칙  
   영문 대/소문자(A~Z, a~z), 숫자(0~9), 밑줄문자(\_)  
   인코딩이 UTF-8인 경우 기본 라틴 문자가 아닌 문자(α, β, ┘ 등)도 허용  
@@ -164,7 +164,7 @@ ex) substr("substr test text", "test", "sample")
 
 - 변수 사용 예제  
 
-```
+```js
 $price = 3.93;
 $tax_rate = 0.08;
 $tax_amount = $price * $tax_rate;
@@ -188,35 +188,91 @@ james@example.com
 ```
 
 - 할당과 덧셈 조합
-```
+```js
 $price = $price + 3;
 $price += 3;
 ```
 
-- 할당과 결합 연산자 조합
-```
-$username = 'james';
-$domain = '@example.com';
-
-$user
+- 할당과 결합 연산자 조합   
+```js
+$username = $username . $domain;
 $username .= $domain;
+```
+
+- 증가와 감소
+```js
+$birthday = $birthday + 1;
+++$birthday;
+
+$years_left = $years_left - 1;
+--$years_left;
 ```
 
 ### 2.3.2 문자열 내부에 변수 넣기
 
+변수의 값을 다른 텍스트와 조합해 출력해야 할 경우, 큰따옴표 문자열과 here 문서를 이용
+
+- 변수 삽입 (큰따옴표 문자열)
+```js
+$email = 'jacob@example.com';
+print "reply to $email";
+-----------------------------------------------------
+reply to jacob@example.com
+```
+
+- here 문서에 변수 넣기
+```js
+$page_title = '메뉴';
+$meat = '돼지고기';
+$vegetable = '숙주나물';
+print <<<MENU
+<html>
+    <head><title>$page_title</title></head>
+    <body>
+        <ul>
+            <li>$meat 바베큐</li>
+            <li>훈제 $meat</li>
+            <li>$meat 조림과 $vagetable</li>
+        </ul>
+    </body>
+</html>
+-----------------------------------------------------
+<html>
+    <head><title>메뉴</title></head>
+    <body>
+        <ul>
+            <li>돼지고기 바베큐</li>
+            <li>훈제 돼지고기</li>
+            <li>돼지고기 조림과 숙주나물</li>
+        </ul>
+    </body>
+</html>
+MENU;
+```
+
+- 중괄호로 변수 감싸기  
+변수명이 끝나는 위치와 문자열 그대로 출력할 위치를 정확히 지정하기 위해 중괄호 사용 (4장에서)
+```js
+$preparation = '삶';
+$meat = '소고기';
+print "야채를 곁들인 {$preparation}은 $meat"
+-----------------------------------------------------
+야채를 곁들인 삶은 소고기
+```
+
 ## 2.4 마치며
 
-- 프로그램에서 문자열을 정의하는 세 가지 방법 : 작은따움표('text'), 큰따옴표("text"), here 문서(<<<EOT text EOT)
+- 프로그램에서 문자열을 정의하는 세 가지 방법 : 작은따움표('text'), 큰따옴표("text"), here 문서(<<&lt;EOT text EOT)
 - 이스케이프문자(\\)
+- 문자열의 유효성 검사, 앞뒤 화이트 스페이스 제거, 다른 문자열과 비교
+- printf() 로 문자열에 형식 지정하기
+- strtolower(), strtoupper(), ucwords() 대소문자 조작
+- substr() 문자열 일부 선택
+- str_replace() 문자열 부분 교체
+- 숫자의 수학적 계산
+- 변수 정의 및 값 저장하기
+- 변수에 조합 연산자 사용
+- 증가 연산자와 감소 연산자
+- 문자열 내부에 변수 삽입하기
 
-줄의 처음을 #으로 시작.  
-\#의 개수에 따라 &lt;Hn> 태그로 치환됨
-
-```
-# H1
-## H2
-### H3mark
-#### H4
-##### H5
-###### H6
-```
+---
