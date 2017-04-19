@@ -13,21 +13,18 @@
 #### 문자열을 나타내는 방법
 
 - **작은따옴표('text')**  
-  \- 작은따옴표(')와 역슬래시(\\) 이외 문자는 그대로 취급  
+    작은따옴표(')와 역슬래시(\\) 이외 문자는 그대로 취급   
 
 ```
-<?php
 print '오늘 저녁 뭐먹을까요?';
 print '치킨';
 print '032153';
 print '"순살"이 좋겠네요';
-?>
 ----------------------------------------------------------------
 오늘 저녁 뭐먹을까요?치킨032153"순살"이 좋겠네요
 ```
 
-
-- **이스케이프 문자(\\)**  
+- **이스케이프 문자(\\)**   
 
 ```
 print 'It\'s a piece of cake.';
@@ -79,50 +76,26 @@ HEREDOC;
 #### 문자열 유효성 검사
 우편번호, 이메일 등 제출된 폼 데이터의 유효성 검사
 
-- **trim()**  
-문자열의 시작과 끝에 존재하는 화이트스페이스 제거  
-ex) trim(" text ")
-- **strlen()**  
-문자열의 길이  
-ex) strlen(" text ")
-- **strcasecmp()**  
-대소문자 구분없이 문자열 비교(내용이 같으면 0 반환)  
-ex) strcasecmp("text", "TExt")
+|함수명|기능|사용|
+|---|---|---|
+|**trim()**|문자열의 시작과 끝에 존재하는 화이트스페이스 제거|trim("   text  ") &rarr; text |
+|**strlen()**|문자열의 길이 반환|strlen(" text ") &rarr; 6|
+|**strcasecmp()**|대소문자 구분없이 문자열 비교(내용이 같으면 0 반환)|strcasecmp("text", "TExt") &rarr; 0|
+
+#### 텍스트 형식화
+- 문자열을 특정 형식으로 출력  
 
 |함수명|기능|사용|
 |---|---|---|
-|**trim()**|문자열의 시작과 끝에 존재하는 화이트스페이스 제거|trim(" text ")|
-|**strlen()**|문자열의 길이 반환|strlen(" text ")|
-|**strcasecmp()**|대소문자 구분없이 문자열 비교(내용이 같으면 0 반환)|strcasecmp("text", "TExt")|
-
-#### 텍스트 형식화
-- **printf()**  
-  \- 문자열을 특정 형식으로 출력  
-  \- 형식 문자열 규칙은 %로 시작
-
-|역할|사용|결과|
-|---|---|---|
-|패딩 문자|printf("우편번호 .%05d.", "521")|00521|
-|기호|printf("2016년 최저기온 %+d℃ 최고기온 %+d℃ ", -18.0, 36.6)|2016년 최저기온 -18℃ 최고기온 +36℃|
-|최소 너비|printf("Alphabet : %8s", "ABCD")|Alphabet :     ABCD|
-||printf("Numbers : %05d", "123")|Numbers : 00123|
-|마침표와 정밀도|printf("PI = %.2f", 3.141592)|PI = 3.14|
-
-- **strtolower()**  
-문자열 전체를 소문자로 변경  
-ex) strtolower("Text")
-- **strtoupper()**  
-문자열 전체를 대문자로 변경  
-ex) strtoupper("Text")
-- **ucwords()**  
-문자열 내 각 단어의 첫 글자를 대문자로 변경  
-ex) ucwords("text")
-- **substr()**  
-문자열의 일부를 원하는 대로 추출(문자열, 시작위치, 추출할 바이트 수)  
-ex) substr("substr test text", 0, 11)
-- **str_replace()**  
-문자열의 일부를 새로운 문자열로 변경(문자열, 대상 문자열, 새로운 문자열)  
-ex) substr("substr test text", "test", "sample")
+| **printf()** |패딩 문자|printf("우편번호 : %05d.", "521")<br> &rarr; 우편번호 : 00521|
+||기호|printf("2016년 최저기온 %+d℃ 최고기온 %+d℃ ", -18.0, 36.6)<br> &rarr; 2016년 최저기온 -18℃ 최고기온 +36℃|
+||최소 너비|printf("Alphabet : %8s", "ABCD")<br> &rarr; Alphabet :     &nbsp;&nbsp;&nbsp;&nbsp;ABCD<br>printf("Numbers : %05d", "123")<br> &rarr; Numbers : 00123|
+||마침표와 정밀도|printf("PI = %.2f", 3.141592) &rarr; PI = 3.14|
+| **strtolower()** |문자열 전체를 소문자로 변경  |ex) strtolower("Text")<br> &rarr; text |
+| **strtoupper()** |문자열 전체를 대문자로 변경  | strtoupper("Text")<br> &rarr; TEXT |
+|**ucwords()**  |문자열 내 각 단어의 첫 글자를 대문자로 변경  | ucwords("text")<br> &rarr; Text |
+| **substr()**  |문자열의 일부를 원하는 대로 추출(문자열, 시작위치, 추출할 바이트 수)  | substr("substr test text", 3, 10)<br> &rarr; str test t |
+| **str_replace()**  |문자열의 일부를 새로운 문자열로 변경(문자열, 대상 문자열, 새로운 문자열)  | substr("substr test text", "test", "sample")<br> &rarr; substr sample text |
 
 
 ## 2.2 숫자
@@ -187,22 +160,24 @@ james@example.com
 ```
 
 - 할당과 덧셈 조합
+
 ```js
 $price = $price + 3;
 $price += 3;
 ```
 
-- 할당과 결합 연산자 조합   
+- 할당과 결합 연산자 조합  
+
 ```js
 $username = $username . $domain;
 $username .= $domain;
 ```
 
-- 증가와 감소
-```js
+- 증가와 감소  
+
+```
 $birthday = $birthday + 1;
 ++$birthday;
-
 $years_left = $years_left - 1;
 --$years_left;
 ```
@@ -212,6 +187,7 @@ $years_left = $years_left - 1;
 변수의 값을 다른 텍스트와 조합해 출력해야 할 경우, 큰따옴표 문자열과 here 문서를 이용
 
 - 변수 삽입 (큰따옴표 문자열)
+
 ```js
 $email = 'jacob@example.com';
 print "reply to $email";
@@ -220,6 +196,7 @@ reply to jacob@example.com
 ```
 
 - here 문서에 변수 넣기
+
 ```js
 $page_title = '메뉴';
 $meat = '돼지고기';
@@ -229,12 +206,13 @@ print <<<MENU
     <head><title>$page_title</title></head>
     <body>
         <ul>
-            <li>$meat 바베큐</li>
+            <li>{$meat} 바베큐</li>
             <li>훈제 $meat</li>
             <li>$meat 조림과 $vagetable</li>
         </ul>
     </body>
 </html>
+MENU;
 ----------------------------------------------------------------
 <html>
     <head><title>메뉴</title></head>
@@ -246,11 +224,11 @@ print <<<MENU
         </ul>
     </body>
 </html>
-MENU;
 ```
 
 - 중괄호로 변수 감싸기  
-변수명이 끝나는 위치와 문자열 그대로 출력할 위치를 정확히 지정하기 위해 중괄호 사용 (4장에서)
+변수명이 끝나는 위치와 문자열 그대로 출력할 위치를 정확히 지정하기 위해 중괄호 사용 (4장에서 자세히)
+
 ```js
 $preparation = '삶';
 $meat = '소고기';
