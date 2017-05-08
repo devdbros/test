@@ -13,8 +13,6 @@
 
 
 
-
-
 ## 9.2 전체 파일 읽고 쓰기
 
 ### 9.2.1 파일 읽기
@@ -52,7 +50,7 @@ file_put_contents('page-contents.html', $contents);
      \- PHP 엔진이 파일을 읽기 시작할 위치, 내용 초기화 여부, 파일이 없을 경우 대응법 등  
     _$file = fopen('c:/project/user.txt', 'rb')_  
     _$file = fopen('userlog.txt', 'ab')_  
-```
+
 - **fgets( $file )**  
     파일 내용을 한 줄씩 읽고 문자열로 반환  
     PHP 엔진은 파일을 읽어들일때, 파일의 맨 앞에서부터 현재 읽고 있는 위치를 표시해 둔다.  
